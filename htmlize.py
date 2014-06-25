@@ -64,11 +64,13 @@ def html_header():
     css_file.close()
 
     out = []
+    out.append('<!doctype html>\n')
     out.append('<html>\n')
     out.append('<head>\n')
     out.append('<META http-equiv="Content-Type" content="text/html; charset=utf-8">\n')
+    out.append('<title>Psydiff output</title>\n')
 
-    out.append('<style>\n')
+    out.append('<style type="text/css">\n')
     out.append(css_text)
     out.append('\n</style>\n')
 
@@ -93,9 +95,9 @@ def write_html(text, side):
     out.append('<div id="' + side + '" class="src">')
     out.append('<pre>')
     if side == 'left':
-        out.append('<a id="leftstart" tid="rightstart"></a>')
+        out.append('<a id="leftstart" data-tid="rightstart"></a>')
     else:
-        out.append('<a id="rightstart" tid="leftstart"></a>')
+        out.append('<a id="rightstart" data-tid="leftstart"></a>')
 
     out.append(text)
     out.append('</pre>')
@@ -183,8 +185,8 @@ def link_start(change, side):
     else:
         me, other = change.cur, change.orig
 
-    return ('<a id=' + qs(uid(me)) +
-            ' tid=' + qs(uid(other)) +
+    return ('<a id=' + qs('i' + uid(me)) +
+            ' data-tid=' + qs('i' + uid(other)) +
             ' class=' + qs(cls) +
             '>')
 

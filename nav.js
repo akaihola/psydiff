@@ -248,7 +248,7 @@ window.onload =
                 function (e) {
                     var t = getTarget(e)
                     var lid = t.id
-                    var tid = t.getAttribute('tid')
+                    var tid = t.getAttribute('data-tid')
                     var container = getContainer(t)
                     highlight(container, lid, tid)
                     showArrow(lid, tid)
@@ -257,7 +257,7 @@ window.onload =
                 function (e) {
                     var t = getTarget(e)
                     var lid = t.id
-                    var tid = t.getAttribute('tid')
+                    var tid = t.getAttribute('data-tid')
                     var container = getContainer(t)
                     highlight(container, lid, tid)
                     matchWindow(lid, tid, nSteps)
