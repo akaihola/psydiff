@@ -1,3 +1,7 @@
+html, body {
+    height: 98%;
+}
+
 .d {                            /* deleted */
     border: solid 1px #CC929A;
     border-radius: 3px;
@@ -51,7 +55,7 @@ div.line {
 
 div.src {
     width:48%;
-    height:98%;
+    height:100%;
     overflow:scroll;
     float:left;
     padding:0.5%;
